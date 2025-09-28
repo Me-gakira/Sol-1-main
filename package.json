@@ -1,0 +1,11 @@
+{
+  "name": "Sol 1",
+  "packageManager": "yarn@4.10.3",
+  "dependencies": {
+    "apollo-server-express": "^3.13.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "graphql": "15",
+    "mongoose": "^8.18.2"
+  }
+}
