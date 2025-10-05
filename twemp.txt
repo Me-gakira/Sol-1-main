@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+        <div class="col-12 d-flex justify-content-start">
+            <p>Inicio de sesión</p>
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-12 d-flex justify-content-start">
+            <p>Correo electrónico</p>
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-12 d-flex justify-content-start">
+
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-12 d-flex justify-content-start">
+            <p>Contraseña</p>
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-12 d-flex justify-content-start">
+
+        </div>
+  </div>
+  <div class="row">
+        <div class="col-12 d-flex justify-content-center">
+            <button type="button" class="btn btn-primary btn-lg">Confirmar</button>
+        </div>
+  </div>
+
+</div>
