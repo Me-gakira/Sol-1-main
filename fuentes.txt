@@ -1,0 +1,5 @@
+https://www.bootdey.com/snippets/view/Shop-page 
+Catálogo
+
+https://www.w3schools.com/bootstrap5/bootstrap_forms.php
+Login,registro,recuperación
