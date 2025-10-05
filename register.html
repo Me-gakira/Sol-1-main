@@ -10,7 +10,7 @@
 <body>
   
 <div class="container">
-  <h1>Inicio de sesión</h1>
+  <h1>Registro de usuario</h1>
   <form action="/action_page.php">
       <div class="mb-3 mt-3">
             <label for="email" class="form-label">Email:</label>
@@ -19,11 +19,11 @@
       <div class="mb-3">
             <label for="pwd" class="form-label">Contraseña:</label>
             <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña" name="pswd">
+            <p>La contraseña debe incluir al menos una mayúscula, número, y símbolo</p>
       </div>
-      <div class="form-check mb-3">
-            <label class="form-check-label">
-                  <input class="form-check-input" type="checkbox" name="remember"> Recuérdeme
-            </label>
+      <div class="mb-3">
+            <label for="pwd" class="form-label">Confirmar Contraseña:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña" name="pswd">
       </div>
       <button type="submit" class="btn btn-primary">Confirmar</button>
   </form>
