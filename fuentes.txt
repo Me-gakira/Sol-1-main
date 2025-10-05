@@ -3,3 +3,9 @@ Catálogo
 
 https://www.w3schools.com/bootstrap5/bootstrap_forms.php
 Login,registro,recuperación
+
+https://www.bootdey.com/snippets/view/shop-product-detail
+Detalle de productos
+
+https://www.bootdey.com/snippets/view/shopping-cart-with-selected-products-order-summary-and-checkout-button
+Carro
