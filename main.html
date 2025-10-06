@@ -30,30 +30,31 @@
   </script>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm bg-light">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
   <div class="container-fluid">
     <a class="navbar-brand" href="#">Logo</a>
     <!-- Links -->
     <ul class="navbar-nav">
       <li class="nav-item">
+        <a class="nav-link" href="catalog.html">Productos</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="#">Sobre nosotros</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Reportar problema</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="login.html">Iniciar sesión</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="register.html">Registrarse</a>
-      </li>
     </ul>
+    <form class="d-flex">
+      <button class="btn btn-success" type="button" href="register.html">Registrarse</button>
+      <button class="btn btn-success" type="button" href="login.html">Iniciar sesión</button>
+    </form>
   </div>
 
 </nav>
 
-<div class="container-fluid p-2 bg-primary text-white text-center">
+<div class="container-fluid p-2 bg-dark text-white text-center">
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
         <!-- Indicators/dots -->
@@ -66,19 +67,19 @@
         <!-- The slideshow/carousel -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Images/bowl1.webp" alt="Bowl 1" style="width:500px;height:500px;">
+                <img src="Images/bowl1.webp" class="rounded" alt="Bowl 1" style="width:500px;height:500px;">
                 <div class="carousel-caption">
                     <h3>Bowl 1 $5000 -25%</h3>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="Images/bowl2.webp" alt="Bowl 2" style="width:500px;height:500px;">
+                <img src="Images/bowl2.webp" class="rounded" alt="Bowl 2" style="width:500px;height:500px;">
                 <div class="carousel-caption">
                     <h3>Bowl 2 $7500 -30%</h3>
                 </div>
             </div>
             <div class="carousel-item">
-                <img src="Images/bowl3.webp" alt="Bowl 3" style="width:500px;height:500px;">
+                <img src="Images/bowl3.webp" class="rounded" alt="Bowl 3" style="width:500px;height:500px;">
                 <div class="carousel-caption">
                     <h3>Bowl 3 $4000 -20%</h3>
                 </div>
@@ -95,67 +96,45 @@
     </div>
 </div>
   
-<div class="container mt-5">
+<div class="container-fluid bg-danger">
+  <h1>Populares</h1>
   <div class="row">
-    <div class="container">
-    <div class="d-flex align-items-center">
-        <div class="flex-shrink-0">
-            <a href="#" class="btn-left btn-link p-2 toggle text-dark"><i class="fa fa-arrow-left"></i></a>
-        </div>
-        <div class="flex-grow-1 w-100 o-hidden">
-            <ul class="nav text-uppercase small position-relative flex-nowrap gap-3">
-                <li class="nav-item">
-                    <img src="Images/bowl4.webp" alt="Bowl 3" style="width:200px;height:200px;">
-                    <p class="text-dark">Bowl 4 $5000</p>
-                </li>
-                <li class="nav-item">
-                    <img src="Images/bowl5.webp" alt="Bowl 3" style="width:200px;height:200px;">
-                    <p class="text-dark">Bowl 5 $5000</p>
-                </li>
-                <li class="nav-item">
-                    <img src="Images/bowl6.webp" alt="Bowl 3" style="width:200px;height:200px;">
-                    <p class="text-dark">Bowl 6 $5000</p>
-                </li>
-                <li class="nav-item">
-                    <img src="Images/bowl7.webp" alt="Bowl 3" style="width:200px;height:200px;">
-                    <p class="text-dark">Bowl 7 $5000</p>
-                </li>
-                <li class="nav-item">
-                    <img src="Images/bowl1.webp" alt="Bowl 3" style="width:200px;height:200px;">
-                    <p class="text-dark">Bowl 1 $5000</p>
-                </li>
-                <li class="nav-item">
-                    <img src="Images/bowl2.webp" alt="Bowl 3" style="width:200px;height:200px;">
-                    <p class="text-dark">Bowl 2 $5000</p>
-                </li>
-                <li class="nav-item">
-                    <img src="Images/bowl3.webp" alt="Bowl 3" style="width:200px;height:200px;">
-                    <p class="text-dark">Bowl 3 $5000</p>
-                </li>
-                <li class="nav-item">
-                    <a href="#" class="nav-link">More</a>
-                </li>
-            </ul>
-        </div>
-        <div class="flex-shrink-0">
-            <a href="#" class="btn-right btn-link toggle p-2 text-dark"><i class="fa fa-arrow-right"></i></a>
-        </div>
+    <div class="col-md-3">
+      <img src="Images/bowl1.webp" class="rounded" alt="Bowl 1" style="width:200px;height:200px;">
+      <p class="text-light">Bowl 1 $5000</p>
     </div>
+
+    <div class="col-md-3">
+      <img src="Images/bowl2.webp" class="rounded" alt="Bowl 2" style="width:200px;height:200px;">
+      <p class="text-light">Bowl 2 $7500</p>
+    </div>
+
+    <div class="col-md-3">
+      <img src="Images/bowl3.webp" class="rounded" alt="Bowl 3" style="width:200px;height:200px;">
+      <p class="text-light">Bowl 3 $4000</p>      
+    </div>
+
+    <div class="col-md-3">
+      <img src="Images/bowl4.webp" class="rounded" alt="Bowl 4" style="width:200px;height:200px;">
+      <p class="text-light">Bowl 4 $4500</p>      
+    </div>
+  </div>
+
 </div>
   </div>
-  <div class="row">
-    <div class="col-sm-2">
-      <h3>Column 1</h3>
+  <div class="row bg-dark text-light">
+    <div class="col-sm-4">
+      <h3>Contacto</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    <div class="col-sm-8">
-      <h3>Column 2</h3>
+    <div class="col-sm-4">
+      <h3>Certificados y premios</h3>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>
-    <div class="col-sm-2">
-      <h3>Column 3</h3>        
+    <div class="col-sm-4">
+      <h3>Legal</h3>        
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
       <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
     </div>

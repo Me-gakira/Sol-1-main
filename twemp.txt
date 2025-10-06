@@ -33,3 +33,10 @@
 </div>
 
 action="/action_page.php"
+
+      <li class="nav-item">
+        <a class="nav-link" href="login.html">Iniciar sesión</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="register.html">Registrarse</a>
+      </li>
