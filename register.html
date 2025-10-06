@@ -18,9 +18,10 @@
       let passConf = document.getElementById("passConfirm").value;
 
       if (email == "cliente1@sandwish.cl" && pass == "clave2025" && passConf == pass){
-
-        location.href = "catalog.html";
-
+            location.href = "catalog.html";
+        //var modalElement = document.getElementById('regExito');
+        //var modal = new bootstrap.Modal(modalElement);
+        //modal.toggle();   
       }
 
       if (email == "cliente2@sandwish.cl"){
@@ -44,7 +45,7 @@
   </script>
 <div class="container">
   <h1>Registro de usuario</h1>
-  <form action="/action_page.php">
+  <form>
       <div class="mb-3 mt-3">
             <label for="emailRegister" class="form-label">Email:</label>
             <input type="email" class="form-control" id="emailRegister" placeholder="Introduzca su correo" name="email">
@@ -58,9 +59,26 @@
             <label for="passConfirm" class="form-label">Confirmar Contraseña:</label>
             <input type="password" class="form-control" id="passConfirm" placeholder="Introduzca su contraseña" name="pswd">
       </div>
-      <button type="submit" class="btn btn-primary" onclick="registrarse()">Confirmar</button>
+      <button type="button" class="btn btn-primary" onclick="registrarse()">Confirmar</button>
   </form>
 </div>
+<!--Modal-->
+<div class="modal" id="regExito">
+  <div class="modal-dialog">
+    <div class="modal-content">
 
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Registro Exitoso</h4>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" href="catalog.html" data-bs-dismiss="modal">Al catálogo</button>
+      </div>
+
+    </div>
+  </div>
+</div>
 </body>
 </html>

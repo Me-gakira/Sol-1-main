@@ -8,19 +8,31 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  
+  <script>
+    function recup(){
+      let pass = document.getElementById("pass1").value;
+      let conf = document.getElementById("pass2").value;
+
+      if (pass == conf){
+        location.href = "catalog.hyml";
+      }
+      else{
+        alert("Contraseñas no son iguales");
+      }
+    }
+  </script>
 <div class="container">
   <form action="/action_page.php">
       <div class="mb-3">
-            <label for="pwd" class="form-label">Contraseña:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña" name="pswd">
+            <label for="pass1" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="pass1" placeholder="Introduzca su contraseña" name="pswd">
             <p>La contraseña debe incluir al menos una mayúscula, número, y símbolo</p>
       </div>
       <div class="mb-3">
-            <label for="pwd" class="form-label">Confirmar Contraseña:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña" name="pswd">
+            <label for="pass2" class="form-label">Confirmar Contraseña:</label>
+            <input type="password" class="form-control" id="pass2" placeholder="Introduzca su contraseña" name="pswd">
       </div>
-      <button type="submit" class="btn btn-primary">Confirmar</button>
+      <button type="button" onclick="recup()" class="btn btn-primary">Confirmar</button>
   </form>
 </div>
 
