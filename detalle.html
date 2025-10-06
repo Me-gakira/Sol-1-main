@@ -183,6 +183,9 @@
             alert("Producto no disponible");
         }
     }
+    function navCat(){
+        location.href = "catalog.html";
+    }
   </script>
   <div class="container-fluid bg-dark text-light">
     <div class="row">
@@ -212,10 +215,10 @@
                             <input type="quantiy" placeholder="1" class="form-control quantity">
                         </div>
                         <p>
-                            <button class="btn btn-round btn-success" type="button"><i onclick="añadir()"></i> Añadir al carro</button>
+                            <button class="btn btn-round btn-success" type="button" onclick="añadir()">Añadir al carro</button>
                         </p>
                         <p>
-                            <button class="btn btn-round btn-danger" type="button"><i href="catalog.html"></i> Volver al catálogo</button>
+                            <button class="btn btn-round btn-danger" type="button"onclick="navCat()" href="catalog.html">Volver al catálogo</button>
                         </p>
                     </div>
                 </div>

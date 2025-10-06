@@ -32,6 +32,12 @@
 <body>
   <script>
     var tiempoUltimaActividad = 10;
+    function navReg(){
+      location.href = "register.html";
+    }
+    function navLog(){
+      location.href = "login.html";
+    }
   </script>
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
@@ -50,8 +56,8 @@
       </li>
     </ul>
     <form class="d-flex">
-      <button class="btn btn-success" type="button" href="register.html">Registrarse</button>
-      <button class="btn btn-success" type="button" href="login.html">Iniciar sesión</button>
+      <button class="btn btn-success" type="button" onclick="navReg()" href="register.html">Registrarse</button>
+      <button class="btn btn-success" type="button" onclick="navLog()" href="login.html">Iniciar sesión</button>
     </form>
   </div>
 
