@@ -172,6 +172,17 @@
 <body>
   <script>
     var tiempoUltimaActividad = 10;
+    var disponible = true;
+  </script>
+  <script>
+    function añadir(id){
+        if(disponible){
+            //añadir al carro
+        }
+        else{
+            alert("Producto no disponible");
+        }
+    }
   </script>
   <div class="container-fluid bg-dark text-light">
     <div class="row">
@@ -201,7 +212,7 @@
                             <input type="quantiy" placeholder="1" class="form-control quantity">
                         </div>
                         <p>
-                            <button class="btn btn-round btn-success" type="button"><i class="fa fa-shopping-cart"></i> Añadir al carro</button>
+                            <button class="btn btn-round btn-success" type="button"><i onclick="añadir()"></i> Añadir al carro</button>
                         </p>
                         <p>
                             <button class="btn btn-round btn-danger" type="button"><i href="catalog.html"></i> Volver al catálogo</button>

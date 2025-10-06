@@ -66,10 +66,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/5.3.45/css/materialdesignicons.css" integrity="sha256-NAxhqDvtY0l4xn+YVa6WjAcmd94NNfttjNsDmNatFVc=" crossorigin="anonymous" />
 <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
-<div class="container">
+<script>
+    function eliminarElemento(id){
+        //eliminar del carro
+    }
+    function añadirAFavoritos(id){
+        //añadir a favoritos
+    }
+</script>
+<div class="container-fluid bg-dark">
     <div class="row">
         <div class="col-xl-8">
-            <div class="card border shadow-none">
+            <div class="card border shadow-none"style="background: #cdddff;">
                 <div class="card-body">
 
                     <div class="d-flex align-items-start border-bottom pb-3">
@@ -92,12 +100,12 @@
                             <ul class="list-inline mb-0 font-size-16">
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted px-1">
-                                        <i class="mdi mdi-trash-can-outline"></i>
+                                        <i class="mdi mdi-trash-can-outline" onclick="eliminarElemento(1)"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted px-1">
-                                        <i class="mdi mdi-heart-outline"></i>
+                                        <i class="mdi mdi-heart-outline" onclick="añadirAFavoritos(1)"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -142,7 +150,7 @@
             </div>
             <!-- end card -->
 
-            <div class="card border shadow-none">
+            <div class="card border shadow-none"style="background: #cdddff;">
                 <div class="card-body">
 
                     <div class="d-flex align-items-start border-bottom pb-3">
@@ -164,12 +172,12 @@
                             <ul class="list-inline mb-0 font-size-16">
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted px-1">
-                                        <i class="mdi mdi-trash-can-outline"></i>
+                                        <i class="mdi mdi-trash-can-outline" onclick="eliminarElemento(2)"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted px-1">
-                                        <i class="mdi mdi-heart-outline"></i>
+                                        <i class="mdi mdi-heart-outline" onclick="añadirAFavoritos(2)"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -214,7 +222,7 @@
             </div>
             <!-- end card -->
 
-            <div class="card border shadow-none">
+            <div class="card border shadow-none" style="background: #cdddff;">
                 <div class="card-body">
 
                     <div class="d-flex align-items-start border-bottom pb-3">
@@ -235,12 +243,12 @@
                             <ul class="list-inline mb-0 font-size-16">
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted px-1">
-                                        <i class="mdi mdi-trash-can-outline"></i>
+                                        <i class="mdi mdi-trash-can-outline" onclick="eliminarElemento(3)"></i>
                                     </a>
                                 </li>
                                 <li class="list-inline-item">
                                     <a href="#" class="text-muted px-1">
-                                        <i class="mdi mdi-heart-outline"></i>
+                                        <i class="mdi mdi-heart-outline" onclick="añadirAFavoritos(3)"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -287,7 +295,7 @@
 
             <div class="row my-4">
                 <div class="col-sm-6">
-                    <a href="catalog.html" class="btn btn-link text-muted">
+                    <a href="catalog.html" class="btn btn-danger text-light">
                         <i class="mdi mdi-arrow-left me-1"></i> Seguir comprando </a>
                 </div> <!-- end col -->
                 <div class="col-sm-6">
