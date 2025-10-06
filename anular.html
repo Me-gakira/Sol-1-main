@@ -8,21 +8,55 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  
+  tiempoPedidos = [10:30]
 <div class="container">
+    <script>
+        function cancelar(){
+            location.href = "main.html";
+        }
+        function anular(){
+            let pedido = document.getElementById("nped").value;
+            let posibleAnular = false;
+            let time1 = tiempoPedidos[pedido];
+            let time2 = getHours();
+            time2.append(getMinutes());
+            time1Partes = time1.split(":");
+            if (time1Partes[0] > time2[0]){
+                //ej 11:00 y 10:30
+                if(time2[1] > 50){
+                    if ((time2[1] - 50) < time1Partes[1]){
+                        posibleAnular = true;
+                    }
+                }
+            }
+            else{
+                if((time1Partes[1] + 10) > time2[1]){
+                    posibleAnular = true;
+                }
+            }
+            if(posibleAnular){
+                alert("Pedido anulado exitosamente");
+            }
+            else{
+                alert("Tiempo para anular ha expirado");
+            }
+        }
+    </script>
     <h1>¿Anular?</h1>
     <p>Si han pasado menos de 10 minutos desde que hiciste tu pedido, puedes anularlo sin otro requisito</p>
     <form action="/action_page.php">
         <div class="mb-3 mt-3">
-            <label for="comment">Razón:</label>
-            <textarea class="form-control" rows="5" id="comment" name="text"></textarea>
+            <label for="nped" class="form-label">Número de pedido:</label>
+            <input type="numPedido" class="form-control" id="nped" placeholder="Introduzca el número de pedido" name="npedido">
+            <label for="razon">Razón:</label>
+            <textarea class="form-control" rows="5" id="razon" name="text"></textarea>
         </div>
         <div class="row">
             <div class="col">
-                <button type="submit" class="btn btn-primary">Cancelar</button>
+                <button type="submit" onclick="cancelar()" class="btn btn-primary">Cancelar</button>
             </div>
             <div class="col">
-                <button type="submit" class="btn btn-primary">Confirmar</button>
+                <button type="submit" onclick="anular()" class="btn btn-primary">Confirmar</button>
             </div>
         </div>
     </form>

@@ -8,24 +8,57 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-  
+  <script>
+    function registrarse(){
+
+      let email = document.getElementById("emailRegister").value;
+
+      let pass = document.getElementById("passRegister").value;
+
+      let passConf = document.getElementById("passConfirm").value;
+
+      if (email == "cliente1@sandwish.cl" && pass == "clave2025" && passConf == pass){
+
+        location.href = "catalog.html";
+
+      }
+
+      if (email == "cliente2@sandwish.cl"){
+
+        alert("El correo ya está en uso");
+
+      }      
+
+      if (email == "nuevo@sandwish.cl" && pass == "abc"){
+
+        alert("La contraseña no cumple requisitos");
+
+      }  
+      
+      if (pass != passConf){
+        
+        alert("Las contraseñas no son iguales");
+      }
+
+    }
+  </script>
 <div class="container">
   <h1>Registro de usuario</h1>
   <form action="/action_page.php">
       <div class="mb-3 mt-3">
-            <label for="email" class="form-label">Email:</label>
-            <input type="email" class="form-control" id="email" placeholder="Introduzca su correo" name="email">
+            <label for="emailRegister" class="form-label">Email:</label>
+            <input type="email" class="form-control" id="emailRegister" placeholder="Introduzca su correo" name="email">
       </div>
       <div class="mb-3">
-            <label for="pwd" class="form-label">Contraseña:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña" name="pswd">
+            <label for="passRegister" class="form-label">Contraseña:</label>
+            <input type="password" class="form-control" id="passRegister" placeholder="Introduzca su contraseña" name="pswd">
             <p>La contraseña debe incluir al menos una mayúscula, número, y símbolo</p>
       </div>
       <div class="mb-3">
-            <label for="pwd" class="form-label">Confirmar Contraseña:</label>
-            <input type="password" class="form-control" id="pwd" placeholder="Introduzca su contraseña" name="pswd">
+            <label for="passConfirm" class="form-label">Confirmar Contraseña:</label>
+            <input type="password" class="form-control" id="passConfirm" placeholder="Introduzca su contraseña" name="pswd">
       </div>
-      <button type="submit" class="btn btn-primary">Confirmar</button>
+      <button type="submit" class="btn btn-primary" onclick="registrarse()">Confirmar</button>
   </form>
 </div>
 
