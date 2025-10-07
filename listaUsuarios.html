@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Poké Bowls - Lista de usuarios</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <script>
+        function filtroIDMaxMin(){
+            //placeholder
+        }
+        function filtroIDMinMax(){
+            //placeholder
+        }
+        function filtroInicioMaxMin(){
+            //placeholder
+        }
+        function filtroInicioMinMax(){
+            //placeholder
+        }
+        function filtroFechaModMaxMin(){
+            //placeholder
+        }
+        function filtroFechaModMinMax(){
+            //placeholder
+        }
+        function filtroInicialRango(){
+            let inicio = document.getElementById("inicialDesde").value;
+            let final = document.getElementById("inicialHasta").value;
+            //placeholder
+        }
+        function filtroFechaModRango(){
+            let inicio = document.getElementById("modDesde").value;
+            let final = document.getElementById("modHasta").value;
+            //placeholder
+        }
+        function filtroPerfil(){
+            //placeholder
+        }
+        function buscar(){
+            let term = document.getElementById("busqueda").value;
+            //placeholder
+        }
+    </script>
+    <div class="container-fluid mt-3 bg-dark text-light">
+        <div class="row">
+            <div class="col-md-5">
+                <h2>Lista de usuarios</h2>  
+            </div>
+            <div class="col-md-4">
+            </div>
+            <div class="col-md-3">
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#filtros">Filtros</button>
+            </div>
+        </div>
+        <table class="table table-striped table-bordered table-dark">
+            <thead>
+            <tr>
+                <th>Usuario</th>
+                <th>Perfil</th>
+                <th>Fecha de inicio</th>
+                <th>Fecha de modificación</th>
+                <th>N° de usuario</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Andrés Salazar</td>
+                <td>Cliente</td>
+                <td>03/03/2023</td>
+                <td>03/03/2023</td>
+                <td>123456789</td>                
+            </tr>
+            <tr>
+                <td>Florencia Torres</td>
+                <td>Admin</td>
+                <td>03/03/2023</td>
+                <td>10/04/2024</td>
+                <td>987654321</td>
+            </tr>
+            <tr>
+                <td>Nicolás Navarro</td>
+                <td>Cocinero</td>
+                <td>03/03/2023</td>
+                <td>03/03/2023</td>
+                <td>543272893</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" id="filtros">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header bg-dark text-light">
+                <h4 class="modal-title">Filtros</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body bg-dark text-light">
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="btn-filter" onclick="filtroIDMaxMin()" style="background-color: rgb(7, 7, 69);color: #ffffff;">ID - mayor a menor</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn-filter" onclick="filtroInicioMaxMin()" style="background-color: rgb(7, 7, 69);color: #ffffff;">Fecha de inicio - mayor a menor</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn-filter" onclick="filtroFechaModMaxMin()" style="background-color: rgb(7, 7, 69);color: #ffffff;">Fecha de modificación - mayor a menor</button>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <button type="button" class="btn-filter" onclick="filtroIDMinMax()" style="background-color: rgb(7, 7, 69);color: #ffffff;">ID - menor a mayor</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn-filter" onclick="filtroInicioMinMax()" style="background-color: rgb(7, 7, 69);color: #ffffff;">Fecha de inicio - menor a mayor</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="button" class="btn-filter" onclick="filtroFechaModMinMax()" style="background-color: rgb(7, 7, 69);color: #ffffff;">Fecha de modificación - menor a mayor</button>
+                    </div>
+                </div>
+                <form>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn-filter" onclick="filtroFechaInicioRango()" style="background-color: rgb(7, 7, 69);color: #ffffff;">Fecha de inicio - rango</button>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Desde" id="inicialDesde" name="fechaIniDesde">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Hasta" id="inicialHasta" name="fechaIniHasta">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn-filter" onclick="filtroFechaModRango()" style="background-color: rgb(7, 7, 69);color: #ffffff;">Fecha de modificación - rango</button>
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Desde" id="modDesde" name="modRangoDesde">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Hasta" id="modHasta" name="modRangoHasta">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <button type="button" class="btn-filter" onclick="filtroPerfil()" style="background-color: rgb(7, 7, 69);color: #ffffff;">Filtro por perfil</button>
+                        </div>
+                        <div class="col">
+                            <input class="form-control me-2" type="text" id="busqueda" placeholder="Nombre de usuario">
+                        </div>
+                        <div class="col">
+                            <button class="btn btn-primary" onclick="buscar()" type="button">Buscar</button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer bg-dark">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
