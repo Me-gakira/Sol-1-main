@@ -1,8 +1,8 @@
 https://www.bootdey.com/snippets/view/Shop-page 
 Catálogo
 
-https://www.w3schools.com/bootstrap5/bootstrap_forms.php
-Login,registro,recuperación
+https://www.w3schools.com/bootstrap5/
+La mayor parte de los formatos
 
 https://www.bootdey.com/snippets/view/shop-product-detail
 Detalle de productos
