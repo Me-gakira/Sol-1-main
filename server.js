@@ -13,6 +13,15 @@ const Estado = require('./models/estado');
 const MetodoPago = require('./models/metodoPago');
 const Carro = require('./models/carro');
 const ItemCarro = require('./models/itemCarro');
+const usuario = require("./models/usuario");
+const producto = require("./models/producto");
+const precio = require("./models/precio");
+const categoria = require("./models/categoria");
+const pedido = require("./models/pedido");
+const carro = require("./models/carro");
+const metodoPago = require("./models/metodoPago");
+const estado = require("./models/estado");
+const estado = require("./models/estado");
 
 mongoose.connect('mongodb://localhost:27017/DWMSol1');
 const typeDefs = gql`
@@ -365,6 +374,248 @@ const resolvers = {
             return{
                 status: "200",
                 message: "Usuario Eliminado"
+            }
+        },
+        async addCarro(obj, {input}){
+            const fecha = input.fecha;
+            const usuarioID = input.usuario;
+            const usuarioObj = await Usuario.findById(usuarioObj);
+            const sesionkey = input.sesionkey;
+            const subtotal = input.subtotal;
+            if (usuarioObj == null){
+                return null;
+            } else {
+                const carro = new Carro({fecha: fecha, usuario: usuarioObj, sesionkey: sesionkey, subtotal: subtotal});
+                await carro.save();
+                return carro;
+            }
+        },
+        async updCarro(obj, {id, input}){
+            const fecha = input.fecha;
+            const usuarioID = input.usuario;
+            const usuarioObj = await Usuario.findById(usuarioObj);
+            const sesionkey = input.sesionkey;
+            const subtotal = input.subtotal;
+            if (usuarioObj == null){
+                return null;
+            } else {
+                const carro = await Carro.findByIdAndUpdate(id, {fecha: fecha, usuario: usuarioObj, sesionkey: sesionkey, subtotal: subtotal});
+                return carro;
+            }
+        },
+        async delCarro(obj, {id}){
+            await Carro.deleteOne({_id: id});
+            return{
+                status: "202",
+                message: "Carro Eliminado"
+            }
+        },
+        async addItemCarro(obj, {input}){
+            const carroID = input.carro;
+            const carroObj = await Carro.findById(carroID);
+            const productoID = input.producto;
+            const productoObj = await Producto.findById(productoID);
+            const cantidad = input.cantidad;
+            if (carroObj == null || productoObj == null){
+                return null;
+            } else {
+                const itemcarro = new ItemCarro({carro: carroObj, producto: productoObj, cantidad: cantidad});
+                await itemcarro.save();
+                return itemcarro;
+            }
+        },
+        async updItemCarro(obj, {id, input}){
+            const carroID = input.carro;
+            const carroObj = await Carro.findById(carroID);
+            const productoID = input.producto;
+            const productoObj = await Producto.findById(productoID);
+            const cantidad = input.cantidad;
+            if (carroObj == null || productoObj == null){
+                return null;
+            } else {
+                const itemcarro = await ItemCarro.findByIdAndUpdate(id, {carro: carroObj, producto: productoObj, cantidad: cantidad});
+                return itemcarro;
+            }
+        },
+        async delItemCarro(obj, {id}){
+           await ItemCarro.deleteOne({_id: id});
+            return{
+                status: "203",
+                message: "ItemCarro Eliminado"
+            }
+        },
+        async addProducto(obj, {input}){
+            const nombre = input.nombre;
+            const descripcion = input.descripcion;
+            const precioID = input.precio;
+            const precioObj = await Precio.findById(precioID);
+            const categoriaID = input.categoria;
+            const categoriaObj = await Producto.findById(categoriaID);
+            if (precioObj == null || categoriaObj == null){
+                return null;
+            } else {
+                const producto = new Producto({nombre: nombre, descripcion: descripcion, precio: precioObj, categoria: categoriaObj});
+                await producto.save();
+                return producto;
+            }
+        },
+        async updProducto(obj, {id, input}){
+            const nombre = input.nombre;
+            const descripcion = input.descripcion;
+            const precioID = input.precio;
+            const precioObj = await Precio.findById(precioID);
+            const categoriaID = input.categoria;
+            const categoriaObj = await Producto.findById(categoriaID);
+            if (precioObj == null || categoriaObj == null){
+                return null;
+            } else {
+                const producto = await Producto.findByIdAndUpdate(id, {nombre: nombre, descripcion: descripcion, precio: precioObj, categoria: categoriaObj});
+                return producto;
+            }
+        },
+        async delProducto(obj, {id}){
+            await Producto.deleteOne({_id: id});
+            return{
+                status: "204",
+                message: "Producto Eliminado"
+            }
+        },
+        async addPrecio(obj, {input}){
+            const fecha = input.fecha;
+            const precio = input.precio;
+            const productoID = input.producto;
+            const productoObj = await Producto.findById(productoID);
+            if (productoObj == null){
+                return null;
+            } else {
+                const precio = new Precio({fecha: fecha, precio: precio, producto: productoObj});
+                await precio.save();
+                return precio;
+            }
+        },
+        async updPrecio(obj, {id, input}){
+            const fecha = input.fecha;
+            const precio = input.precio;
+            const productoID = input.producto;
+            const productoObj = await Producto.findById(productoID);
+            if (productoObj == null){
+                return null;
+            } else {
+                const precio = await Precio.findByIdAndUpdate(id, {fecha: fecha, precio: precio, producto: productoObj});
+                return precio;
+            }
+        },
+        async delPrecio(obj, {id}){
+            await Precio.deleteOne({_id: id});
+            return{
+                status: "205",
+                message: "Precio Eliminado"
+            }
+        },
+        async addCategoria(obj, {input}){
+            const categoria = new Categoria(input);
+            await categoria.save();
+            return categoria;
+        },
+        async updCategoria(obj, {id, input}){
+            const categoria = await Categoria.findByIdAndUpdate(id, input);
+            return categoria;
+        },
+        async delCategoria(obj, {id}){
+            await Categoria.deleteOne({_id: id});
+            return{
+                status: "206",
+                message: "Categoria Eliminada"
+            }
+        },
+        async addPedido(obj, {input}){
+            const estadoID = input.estado;
+            const estadoObj = await Estado.findById(estadoID);
+            const direccion = input.direccion;
+            const carroID = input.carro;
+            const carroObj = await Carro.findById(carroID);
+            const metodoPagoID = input.metodoPago;
+            const metodoPagoObj = await MetodoPago.findById(metodoPagoID);
+            const total = input.total;
+            const fechaPedido = input.fechaPedido;
+            if (estadoObj == null || carroObj == null || metodoPagoObj == null){
+                return null;
+            } else {
+                const pedido = new Pedido({estado: estadoObj, direccion: direccion, carro: carroObj, metodoPago: metodoPagoObj, total: total, fechaPedido: fechaPedido});
+                await pedido.save();
+                return pedido;
+            }
+        },
+        async updPedido(obj, {id, input}){
+            const estadoID = input.estado;
+            const estadoObj = await Estado.findById(estadoID);
+            const direccion = input.direccion;
+            const carroID = input.carro;
+            const carroObj = await Carro.findById(carroID);
+            const metodoPagoID = input.metodoPago;
+            const metodoPagoObj = await MetodoPago.findById(metodoPagoID);
+            const total = input.total;
+            const fechaPedido = input.fechaPedido;
+            if (estadoObj == null || carroObj == null || metodoPagoObj == null){
+                return null;
+            } else {
+                const pedido = await Pedido.findByIdAndUpdate(id, {estado: estadoObj, direccion: direccion, carro: carroObj, metodoPago: metodoPagoObj, total: total, fechaPedido: fechaPedido});
+                return pedido;
+            }
+        },
+        async delPedido(obj, {id}){
+            await Pedido.deleteOne({_id: id});
+            return{
+                status: "207",
+                message: "Pedido Eliminado"
+            }
+        },
+        async addEstado(obj, {input}){
+            const fecha = input.fecha;
+            const estado = input.estado;
+            const pedidoID = input.pedido;
+            const pedidoObj = await Pedido.findById(pedidoID);
+            if (pedidoObj == null){
+                return null;
+            } else {
+                const estado = new Estado({fecha: fecha, estado: estado, pedido: pedidoObj});
+                await estado.save();
+                return estado;
+            }
+        },
+        async updEstado(obj, {id, input}){
+            const fecha = input.fecha;
+            const estado = input.estado;
+            const pedidoID = input.pedido;
+            const pedidoObj = await Pedido.findById(pedidoID);
+            if (pedidoObj == null){
+                return null;
+            } else {
+                const estado = await Estado.findByIdAndUpdate(id, {fecha: fecha, estado: estado, pedido: pedidoObj});
+                return estado;
+            }
+        },
+        async delEstado(obj, {id}){
+            await Estado.deleteOne({_id: id});
+            return{
+                status: "208",
+                message: "Estado Eliminado"
+            }
+        },
+        async addMetodoPago(obj, {input}){
+            const MetodoPago = new MetodoPago(input);
+            await MetodoPago.save();
+            return MetodoPago;
+        },
+        async updMetodoPago(obj, {id, input}){
+            const MetodoPago = await MetodoPago.findByIdAndUpdate(id, input);
+            return MetodoPago;
+        },
+        async delMetodoPago(obj, {id}){
+            await MetodoPago.deleteOne({_id: id});
+            return{
+                status: "209",
+                message: "MetodoPago Eliminado"
             }
         },
         async addPerfil(obj, {input}){

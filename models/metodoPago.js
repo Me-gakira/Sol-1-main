@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const producto = require("./producto");
 
 const metodoPagoSchema = mongoose.Scheme({
     infoTarjeta: String,

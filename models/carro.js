@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const usuario = require("./usuario");
 
 const carroSchema = mongoose.Scheme({
     fecha: timestamp,

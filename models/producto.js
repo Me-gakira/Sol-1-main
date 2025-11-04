@@ -1,4 +1,6 @@
 const mongoose = require('mongoose');
+const precio = require("./precio");
+const categoria = require("./categoria");
 
 const productoSchema = mongoose.Scheme({
     nombre: String,

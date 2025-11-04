@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const perfil = require("./perfil");
 
 const usuarioSchema = mongoose.Scheme({
     nombre: String,

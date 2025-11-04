@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const pedido = require("./pedido");
 
 const estadoSchema = mongoose.Scheme({
     fecha: timestamp,

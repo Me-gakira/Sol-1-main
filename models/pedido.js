@@ -1,4 +1,7 @@
 const mongoose = require('mongoose');
+const estado = require("./estado");
+const carro = require("./carro");
+const metodoPago = require("./metodoPago");
 
 const pedidoSchema = mongoose.Scheme({
     estado: {type: mongoose.Schema.ObjectId, ref: 'Estado'},
